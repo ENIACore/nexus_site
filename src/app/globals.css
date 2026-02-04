@@ -1,179 +1,307 @@
 @import "tailwindcss";
-@import "tailwindcss";
 
-/* ---------------------------------------------------------
-   Palette tokens (your new palette)
---------------------------------------------------------- */
+/* ============================================
+   MODERN MINIMAL - Color Palette
+   ============================================
+   A clean, contemporary palette with soft muted 
+   tones designed for paper-textured backgrounds.
+   ============================================ */
+
 @theme {
-  /* deep_twilight */
-  --color-deep_twilight-100: #010113;
-  --color-deep_twilight-200: #010226;
-  --color-deep_twilight-300: #020338;
-  --color-deep_twilight-400: #02044b;
-  --color-deep_twilight-500: #03045e;
-  --color-deep_twilight-600: #0508ae;
-  --color-deep_twilight-700: #0f12f8;
-  --color-deep_twilight-800: #5f61fa;
-  --color-deep_twilight-900: #afb0fd;
+  /* --------------------------------------------
+     Primary - Soft Navy
+     Used for: primary buttons, links, key highlights
+     -------------------------------------------- */
+  --color-primary-50: #f4f7f9;
+  --color-primary-100: #e8eef3;
+  --color-primary-200: #c9d8e4;
+  --color-primary-300: #a3bccf;
+  --color-primary-400: #7096b3;
+  --color-primary-500: #3d5a73;
+  --color-primary-600: #344d63;
+  --color-primary-700: #2b4052;
+  --color-primary-800: #233442;
+  --color-primary-900: #1c2a36;
+  --color-primary-950: #111b23;
 
-  /* bright_teal_blue */
-  --color-bright_teal_blue-100: #001825;
-  --color-bright_teal_blue-200: #003049;
-  --color-bright_teal_blue-300: #00486e;
-  --color-bright_teal_blue-400: #005f93;
-  --color-bright_teal_blue-500: #0077b6;
-  --color-bright_teal_blue-600: #00a2f9;
-  --color-bright_teal_blue-700: #3bbaff;
-  --color-bright_teal_blue-800: #7cd1ff;
-  --color-bright_teal_blue-900: #bee8ff;
+  /* --------------------------------------------
+     Secondary - Terracotta
+     Used for: secondary buttons, tags, badges, hover states
+     -------------------------------------------- */
+  --color-secondary-50: #fdf6f3;
+  --color-secondary-100: #fbeae4;
+  --color-secondary-200: #f6d3c7;
+  --color-secondary-300: #efb5a0;
+  --color-secondary-400: #e4917a;
+  --color-secondary-500: #c4785a;
+  --color-secondary-600: #b0614a;
+  --color-secondary-700: #934e3d;
+  --color-secondary-800: #794236;
+  --color-secondary-900: #653a30;
+  --color-secondary-950: #361c17;
 
-  /* turquoise_surf */
-  --color-turquoise_surf-100: #00242b;
-  --color-turquoise_surf-200: #004756;
-  --color-turquoise_surf-300: #006b81;
-  --color-turquoise_surf-400: #008fab;
-  --color-turquoise_surf-500: #00b4d8;
-  --color-turquoise_surf-600: #12d8ff;
-  --color-turquoise_surf-700: #4ee1ff;
-  --color-turquoise_surf-800: #89ebff;
-  --color-turquoise_surf-900: #c4f5ff;
+  /* --------------------------------------------
+     Accent - Sage
+     Used for: success states, emphasis, icons, small highlights
+     -------------------------------------------- */
+  --color-accent-50: #f4f7f5;
+  --color-accent-100: #e6ede9;
+  --color-accent-200: #cddbd3;
+  --color-accent-300: #a9c2b3;
+  --color-accent-400: #7d9082;
+  --color-accent-500: #637a6a;
+  --color-accent-600: #4e6255;
+  --color-accent-700: #405046;
+  --color-accent-800: #36423b;
+  --color-accent-900: #2e3832;
+  --color-accent-950: #181f1b;
 
-  /* frosted_blue */
-  --color-frosted_blue-100: #0a3a43;
-  --color-frosted_blue-200: #137586;
-  --color-frosted_blue-300: #1dafc9;
-  --color-frosted_blue-400: #4ccfe6;
-  --color-frosted_blue-500: #90e0ef;
-  --color-frosted_blue-600: #a6e7f2;
-  --color-frosted_blue-700: #bcedf5;
-  --color-frosted_blue-800: #d2f3f9;
-  --color-frosted_blue-900: #e9f9fc;
+  /* --------------------------------------------
+     Neutral - Warm tones for text, borders, backgrounds
+     -------------------------------------------- */
+  --color-neutral-50: #fdfcfa;
+  --color-neutral-100: #f9f7f4;
+  --color-neutral-200: #f4f2ee;
+  --color-neutral-300: #e8e5df;
+  --color-neutral-400: #d1ccc3;
+  --color-neutral-500: #a8a095;
+  --color-neutral-600: #857d72;
+  --color-neutral-700: #6b645b;
+  --color-neutral-800: #4a453f;
+  --color-neutral-900: #2c2825;
+  --color-neutral-950: #1a1816;
 
-  /* light_cyan */
-  --color-light_cyan-100: #0a444f;
-  --color-light_cyan-200: #15889f;
-  --color-light_cyan-300: #2ac4e3;
-  --color-light_cyan-400: #79daee;
-  --color-light_cyan-500: #caf0f8;
-  --color-light_cyan-600: #d4f3f9;
-  --color-light_cyan-700: #dff6fb;
-  --color-light_cyan-800: #e9f9fc;
-  --color-light_cyan-900: #f4fcfe;
+  /* --------------------------------------------
+     Typography
+     -------------------------------------------- */
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Pro", ui-serif, Georgia, serif;
 
-  /* ---------------------------------------------------------
-     Semantic system tokens (what you actually use in the app)
-     Light mode = airy ocean
-  --------------------------------------------------------- */
-  --color-background: var(--color-light_cyan-500);
-  --color-foreground: var(--color-deep_twilight-500);
+  /* --------------------------------------------
+     Border Radius
+     -------------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
 
-  /* Recommended: use stronger contrast for body copy */
-  --color-muted-foreground: var(--color-bright_teal_blue-400);
-
-  /* Brand / actions */
-  --color-primary: var(--color-bright_teal_blue-500);
-  --color-primary-foreground: var(--color-light_cyan-900);
-
-  /* Secondary */
-  --color-secondary: var(--color-frosted_blue-500);
-  --color-secondary-foreground: var(--color-deep_twilight-500);
-
-  /* Accent pops */
-  --color-accent: var(--color-turquoise_surf-500);
-  --color-accent-foreground: var(--color-deep_twilight-500);
-
-  /* Surfaces */
-  --color-card: var(--color-light_cyan-800);
-  --color-card-foreground: var(--color-deep_twilight-500);
-
-  /* UI chrome */
-  --color-border: var(--color-frosted_blue-400);
-  --color-input: var(--color-frosted_blue-400);
-  --color-ring: var(--color-turquoise_surf-500);
+  /* --------------------------------------------
+     Shadows
+     -------------------------------------------- */
+  --shadow-sm: 0 1px 2px 0 rgb(44 40 37 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(44 40 37 / 0.08), 0 2px 4px -2px rgb(44 40 37 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(44 40 37 / 0.08), 0 4px 6px -4px rgb(44 40 37 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(44 40 37 / 0.1), 0 8px 10px -6px rgb(44 40 37 / 0.05);
 }
 
-/* ---------------------------------------------------------
-   Dark mode overrides (deeper ocean)
---------------------------------------------------------- */
+/* ============================================
+   Semantic Color Tokens (CSS Variables)
+   These change based on light/dark mode
+   ============================================ */
+
 @layer base {
-  .dark {
-    --color-background: var(--color-deep_twilight-500);
-    --color-foreground: var(--color-light_cyan-800);
-
-    /* Keep text readable; use softer cyan for secondary text */
-    --color-muted-foreground: var(--color-frosted_blue-700);
-
-    --color-primary: var(--color-bright_teal_blue-700);
-    --color-primary-foreground: var(--color-deep_twilight-500);
-
-    --color-secondary: var(--color-bright_teal_blue-300);
-    --color-secondary-foreground: var(--color-light_cyan-900);
-
-    --color-accent: var(--color-turquoise_surf-500);
-    --color-accent-foreground: var(--color-deep_twilight-500);
-
-    --color-card: var(--color-deep_twilight-400);
-    --color-card-foreground: var(--color-light_cyan-800);
-
-    --color-border: var(--color-deep_twilight-300);
-    --color-input: var(--color-deep_twilight-300);
-    --color-ring: var(--color-turquoise_surf-600);
+  :root {
+    /* Background */
+    --background: var(--color-neutral-50);
+    --background-subtle: var(--color-neutral-100);
+    --background-muted: var(--color-neutral-200);
+    
+    /* Foreground / Text */
+    --foreground: var(--color-neutral-900);
+    --foreground-muted: var(--color-neutral-500);
+    --foreground-subtle: var(--color-neutral-600);
+    
+    /* Card */
+    --card: var(--color-neutral-50);
+    --card-foreground: var(--color-neutral-900);
+    
+    /* Primary */
+    --primary: var(--color-primary-500);
+    --primary-hover: var(--color-primary-600);
+    --primary-foreground: var(--color-neutral-50);
+    
+    /* Secondary */
+    --secondary: var(--color-secondary-500);
+    --secondary-hover: var(--color-secondary-600);
+    --secondary-foreground: var(--color-neutral-50);
+    
+    /* Accent */
+    --accent: var(--color-accent-400);
+    --accent-hover: var(--color-accent-500);
+    --accent-foreground: var(--color-neutral-50);
+    
+    /* Muted */
+    --muted: var(--color-neutral-200);
+    --muted-foreground: var(--color-neutral-500);
+    
+    /* Border */
+    --border: var(--color-neutral-300);
+    --border-subtle: var(--color-neutral-200);
+    
+    /* Input */
+    --input: var(--color-neutral-200);
+    --input-focus: var(--color-primary-500);
+    
+    /* Ring (focus states) */
+    --ring: var(--color-primary-500);
+    
+    /* Destructive / Error */
+    --destructive: #dc2626;
+    --destructive-foreground: var(--color-neutral-50);
+    
+    /* Success */
+    --success: var(--color-accent-500);
+    --success-foreground: var(--color-neutral-50);
   }
-}
 
-/* ---------------------------------------------------------
-   Base element defaults (so headings look right by default)
---------------------------------------------------------- */
-@layer base {
+  /* ============================================
+     Dark Theme
+     ============================================ */
+  .dark {
+    /* Background */
+    --background: var(--color-neutral-950);
+    --background-subtle: var(--color-neutral-900);
+    --background-muted: var(--color-neutral-800);
+    
+    /* Foreground / Text */
+    --foreground: var(--color-neutral-100);
+    --foreground-muted: var(--color-neutral-400);
+    --foreground-subtle: var(--color-neutral-500);
+    
+    /* Card */
+    --card: var(--color-neutral-900);
+    --card-foreground: var(--color-neutral-100);
+    
+    /* Primary */
+    --primary: var(--color-primary-400);
+    --primary-hover: var(--color-primary-300);
+    --primary-foreground: var(--color-neutral-950);
+    
+    /* Secondary */
+    --secondary: var(--color-secondary-400);
+    --secondary-hover: var(--color-secondary-300);
+    --secondary-foreground: var(--color-neutral-950);
+    
+    /* Accent */
+    --accent: var(--color-accent-400);
+    --accent-hover: var(--color-accent-300);
+    --accent-foreground: var(--color-neutral-950);
+    
+    /* Muted */
+    --muted: var(--color-neutral-800);
+    --muted-foreground: var(--color-neutral-400);
+    
+    /* Border */
+    --border: var(--color-neutral-700);
+    --border-subtle: var(--color-neutral-800);
+    
+    /* Input */
+    --input: var(--color-neutral-800);
+    --input-focus: var(--color-primary-400);
+    
+    /* Ring (focus states) */
+    --ring: var(--color-primary-400);
+    
+    /* Destructive / Error */
+    --destructive: #f87171;
+    --destructive-foreground: var(--color-neutral-950);
+    
+    /* Success */
+    --success: var(--color-accent-400);
+    --success-foreground: var(--color-neutral-950);
+  }
+
+  /* ============================================
+     Base Styles
+     ============================================ */
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+
   html {
-    color-scheme: light;
-  }
-  .dark {
-    color-scheme: dark;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
   }
 
-  /* Headings: strong hierarchy */
-  h1 {
-    color: var(--color-foreground);
-    letter-spacing: -0.02em;
-  }
-  h2 {
-    color: var(--color-primary);
-    letter-spacing: -0.01em;
-  }
-  h3, h4, h5, h6 {
-    color: var(--color-bright_teal_blue-400);
-  }
-
-  /* Paragraph / general text defaults */
-  p, li, label, small {
-    color: var(--color-muted-foreground);
-  }
-
-  a {
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Form controls should match theme */
-  input, textarea, select {
-    border-color: var(--color-border);
-    background: var(--color-card);
-    color: var(--color-foreground);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-ring);
-    outline-offset: 2px;
+  /* Smooth theme transitions */
+  html.transitioning,
+  html.transitioning *,
+  html.transitioning *::before,
+  html.transitioning *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
   }
 }
 
+/* ============================================
+   Utility Classes for Semantic Colors
+   ============================================ */
+
+@layer utilities {
+  /* Background utilities */
+  .bg-background { background-color: var(--background); }
+  .bg-background-subtle { background-color: var(--background-subtle); }
+  .bg-background-muted { background-color: var(--background-muted); }
+  .bg-card { background-color: var(--card); }
+  .bg-muted { background-color: var(--muted); }
+  .bg-primary { background-color: var(--primary); }
+  .bg-primary-hover { background-color: var(--primary-hover); }
+  .bg-secondary { background-color: var(--secondary); }
+  .bg-secondary-hover { background-color: var(--secondary-hover); }
+  .bg-accent { background-color: var(--accent); }
+  .bg-accent-hover { background-color: var(--accent-hover); }
+  .bg-destructive { background-color: var(--destructive); }
+  .bg-success { background-color: var(--success); }
+
+  /* Text utilities */
+  .text-foreground { color: var(--foreground); }
+  .text-foreground-muted { color: var(--foreground-muted); }
+  .text-foreground-subtle { color: var(--foreground-subtle); }
+  .text-card-foreground { color: var(--card-foreground); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  .text-primary { color: var(--primary); }
+  .text-primary-foreground { color: var(--primary-foreground); }
+  .text-secondary { color: var(--secondary); }
+  .text-secondary-foreground { color: var(--secondary-foreground); }
+  .text-accent { color: var(--accent); }
+  .text-accent-foreground { color: var(--accent-foreground); }
+  .text-destructive { color: var(--destructive); }
+  .text-destructive-foreground { color: var(--destructive-foreground); }
+  .text-success { color: var(--success); }
+  .text-success-foreground { color: var(--success-foreground); }
+
+  /* Border utilities */
+  .border-border { border-color: var(--border); }
+  .border-border-subtle { border-color: var(--border-subtle); }
+  .border-input { border-color: var(--input); }
+  .border-primary { border-color: var(--primary); }
+  .border-secondary { border-color: var(--secondary); }
+  .border-accent { border-color: var(--accent); }
+  .border-destructive { border-color: var(--destructive); }
+
+  /* Ring utilities */
+  .ring-ring { --tw-ring-color: var(--ring); }
+  .ring-primary { --tw-ring-color: var(--primary); }
+  .ring-secondary { --tw-ring-color: var(--secondary); }
+  .ring-accent { --tw-ring-color: var(--accent); }
+  .ring-destructive { --tw-ring-color: var(--destructive); }
+
+  /* Focus visible outline */
+  .focus-ring {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--ring);
+  }
+}

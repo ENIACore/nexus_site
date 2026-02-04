@@ -1,0 +1,147 @@
+@theme {
+  --color-deep_twilight-100: #010113;
+  --color-deep_twilight-200: #010226;
+  --color-deep_twilight-300: #020338;
+  --color-deep_twilight-400: #02044b;
+  --color-deep_twilight-500: #03045e;
+  --color-deep_twilight-600: #0508ae;
+  --color-deep_twilight-700: #0f12f8;
+  --color-deep_twilight-800: #5f61fa;
+  --color-deep_twilight-900: #afb0fd;
+
+  --color-bright_teal_blue-100: #001825;
+  --color-bright_teal_blue-200: #003049;
+  --color-bright_teal_blue-300: #00486e;
+  --color-bright_teal_blue-400: #005f93;
+  --color-bright_teal_blue-500: #0077b6;
+  --color-bright_teal_blue-600: #00a2f9;
+  --color-bright_teal_blue-700: #3bbaff;
+  --color-bright_teal_blue-800: #7cd1ff;
+  --color-bright_teal_blue-900: #bee8ff;
+
+  --color-turquoise_surf-100: #00242b;
+  --color-turquoise_surf-200: #004756;
+  --color-turquoise_surf-300: #006b81;
+  --color-turquoise_surf-400: #008fab;
+  --color-turquoise_surf-500: #00b4d8;
+  --color-turquoise_surf-600: #12d8ff;
+  --color-turquoise_surf-700: #4ee1ff;
+  --color-turquoise_surf-800: #89ebff;
+  --color-turquoise_surf-900: #c4f5ff;
+
+  --color-frosted_blue-100: #0a3a43;
+  --color-frosted_blue-200: #137586;
+  --color-frosted_blue-300: #1dafc9;
+  --color-frosted_blue-400: #4ccfe6;
+  --color-frosted_blue-500: #90e0ef;
+  --color-frosted_blue-600: #a6e7f2;
+  --color-frosted_blue-700: #bcedf5;
+  --color-frosted_blue-800: #d2f3f9;
+  --color-frosted_blue-900: #e9f9fc;
+
+  --color-light_cyan-100: #0a444f;
+  --color-light_cyan-200: #15889f;
+  --color-light_cyan-300: #2ac4e3;
+  --color-light_cyan-400: #79daee;
+  --color-light_cyan-500: #caf0f8;
+  --color-light_cyan-600: #d4f3f9;
+  --color-light_cyan-700: #dff6fb;
+  --color-light_cyan-800: #e9f9fc;
+  --color-light_cyan-900: #f4fcfe;
+
+  --color-background: var(--color-light_cyan-500);
+  --color-foreground: var(--color-deep_twilight-500);
+
+  --color-muted-foreground: var(--color-bright_teal_blue-400);
+
+  --color-primary: var(--color-bright_teal_blue-500);
+  --color-primary-foreground: var(--color-light_cyan-900);
+
+  --color-secondary: var(--color-frosted_blue-500);
+  --color-secondary-foreground: var(--color-deep_twilight-500);
+
+  --color-accent: var(--color-turquoise_surf-500);
+  --color-accent-foreground: var(--color-deep_twilight-500);
+
+  --color-card: var(--color-light_cyan-800);
+  --color-card-foreground: var(--color-deep_twilight-500);
+
+  --color-border: var(--color-frosted_blue-400);
+  --color-input: var(--color-frosted_blue-400);
+  --color-ring: var(--color-turquoise_surf-500);
+}
+
+@layer base {
+  .dark {
+    --color-background: var(--color-deep_twilight-500);
+    --color-foreground: var(--color-light_cyan-800);
+
+    --color-muted-foreground: var(--color-frosted_blue-700);
+
+    --color-primary: var(--color-bright_teal_blue-700);
+    --color-primary-foreground: var(--color-deep_twilight-500);
+
+    --color-secondary: var(--color-bright_teal_blue-300);
+    --color-secondary-foreground: var(--color-light_cyan-900);
+
+    --color-accent: var(--color-turquoise_surf-500);
+    --color-accent-foreground: var(--color-deep_twilight-500);
+
+    --color-card: var(--color-deep_twilight-400);
+    --color-card-foreground: var(--color-light_cyan-800);
+
+    --color-border: var(--color-deep_twilight-300);
+    --color-input: var(--color-deep_twilight-300);
+    --color-ring: var(--color-turquoise_surf-600);
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
+  }
+
+  h1 {
+    color: var(--color-foreground);
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+  }
+  h3, h4, h5, h6 {
+    color: var(--color-bright_teal_blue-400);
+  }
+
+  p, li, label, small {
+    color: var(--color-muted-foreground);
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input, textarea, select {
+    border-color: var(--color-border);
+    background: var(--color-card);
+    color: var(--color-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
