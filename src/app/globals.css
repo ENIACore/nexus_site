@@ -73,8 +73,8 @@
 
   /* --------------------------------------------
      Typography
-     -------------------------------------------- */
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+     -------------------------------------------- */
   --font-serif: "Crimson Pro", ui-serif, Georgia, serif;
 
   /* --------------------------------------------
@@ -223,7 +223,7 @@
   }
 
   html {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import SectionWrapper from "../components/layout/SectionWrapper";
+import Section from "../components/layout/Section";
 
-const lato = localFont({
-  variable: "--font-lato",
-  display: "swap",
-  src: [
-    { path: "./fonts/lato/Lato-Thin.ttf", weight: "100", style: "normal" },
-    { path: "./fonts/lato/Lato-ThinItalic.ttf", weight: "100", style: "italic" },
-
-    { path: "./fonts/lato/Lato-Light.ttf", weight: "300", style: "normal" },
-    { path: "./fonts/lato/Lato-LightItalic.ttf", weight: "300", style: "italic" },
-
-    { path: "./fonts/lato/Lato-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/lato/Lato-Italic.ttf", weight: "400", style: "italic" },
-
-    { path: "./fonts/lato/Lato-Bold.ttf", weight: "700", style: "normal" },
-    { path: "./fonts/lato/Lato-BoldItalic.ttf", weight: "700", style: "italic" },
-
-    { path: "./fonts/lato/Lato-Black.ttf", weight: "900", style: "normal" },
-    { path: "./fonts/lato/Lato-BlackItalic.ttf", weight: "900", style: "italic" },
-  ],
+const crimsonPro = localFont({
+    src: [
+    {
+        path: '../../public/fonts/crimson-pro/CrimsonPro-VariableFont_wght.ttf',
+        style: 'normal',
+    },
+    {
+        path: '../../public/fonts/crimson-pro/CrimsonPro-Italic-VariableFont_wght.ttf',
+        style: 'italic',
+    },
+    ],
+    variable: '--font-crimson-pro',
+    display: 'swap',
 });
 
 
@@ -30,12 +26,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className={lato.variable}>
-      <body>
+    return (
+    <html lang="en" className={crimsonPro.variable}>
+        <body>
         {children}
-      </body>
+        </body>
     </html>
-  );
+    );
 }
-
