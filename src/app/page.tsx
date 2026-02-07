@@ -2,20 +2,21 @@ import React from 'react';
 import SectionWrapper from '../components/layout/SectionWrapper';
 import Section from '../components/layout/Section';
 import Navbar from '../components/shared/Navbar';
+import IntroSectionContent from './_components/IntroSectionContent';
 
 const Page: React.FC = () => {
     return (
         <>
+            <header>
             <Navbar/>
-            {/* Temporary main element */}
-
+            </header>
+            <main>
             <SectionWrapper>
-                <Section/>
-                <Section/>
-                <Section/>
-                <Section/>
+                <Section>
+                    <IntroSectionContent/>
+                </Section>
             </SectionWrapper>
-            {/* Main element */}
+            </main>
             {/* Footer element */}
         </>
     );

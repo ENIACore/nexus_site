@@ -95,8 +95,8 @@
         /* --muted-foreground: var(); */
         
         /* Border */
-        /* --border: var(); */
-        /* --border-subtle: var(); */
+        --border: var(--color-primary-600);
+        --border-subtle: var(--color-primary-300);
         
         /* Input */
         /* --input: var(); */
@@ -203,8 +203,8 @@
     /* --color-muted-foreground: var(); */
     
     /* Border */
-    /* --color-border: var(); */
-    /* --color-border-subtle: var(); */
+    --color-border: var(--border);
+    --color-border-subtle: var(--border-subtle);
     
     /* Input */
     /* --color-input: var(); */

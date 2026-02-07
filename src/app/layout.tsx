@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 //style="background-image: url('/bg-gradient.png'); background-size: 161px; background-repeat: repeat;"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-    <html lang="en" className={`${crimsonPro.variable}`}>
-        <body className="relative bg-background-subtle">
-            <BackgroundGradient classes='' opacity={.04}/> 
+    <html lang="en" className={`${crimsonPro.variable} bg-background-subtle`}>
+        <body className="relative bg-background-subtle min-h-screen">
+            <BackgroundGradient classes='' opacity={.06}/> 
             {children}
         </body>
     </html>
