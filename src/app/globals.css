@@ -8,10 +8,7 @@
    ============================================ */
 
 @theme {
-  /* --------------------------------------------
-     Primary - Soft Navy
-     Used for: primary buttons, links, key highlights
-     -------------------------------------------- */
+  /* Primary - Soft Navy (primary buttons, links, key highlights) */
   --color-primary-50: #f4f7f9;
   --color-primary-100: #e8eef3;
   --color-primary-200: #c9d8e4;

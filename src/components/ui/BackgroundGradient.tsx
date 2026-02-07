@@ -1,11 +1,17 @@
 import React from 'react';
 
+interface BackgroundGradientProps {
+    opacity: number
+    classes: string
+}
+
 // Tailwind order: position & layout -> alignment → sizing -> spacing -> visuals -> effects
-const Gradient: React.FC = () => {
+const BackgroundGradient: React.FC<BackgroundGradientProps> = ({opacity, classes}) => {
     return (
         <div
-            className="fixed inset-0 opacity-[0.03] pointer-events-none"
+            className={`${classes} absolute inset-0 pointer-events-none`}
             style={{
+                opacity: opacity,
                 backgroundImage: "url('bg-gradient.png')",
                 backgroundSize: '161px',
                 backgroundRepeat: 'repeat'
@@ -15,4 +21,4 @@ const Gradient: React.FC = () => {
     );
 };
 
-export default Gradient;
+export default BackgroundGradient;

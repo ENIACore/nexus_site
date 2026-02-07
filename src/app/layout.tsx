@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import SectionWrapper from "../components/layout/SectionWrapper";
-import Section from "../components/layout/Section";
-import Gradient from "../components/shared/Gradient";
+import BackgroundGradient from "../components/ui/BackgroundGradient";
 
 const crimsonPro = localFont({
     src: [
@@ -25,13 +23,13 @@ export const metadata: Metadata = {
   title: "Chase's Server",
   description: "Chase's homelab server for all projects",
 };
-
+//style="background-image: url('/bg-gradient.png'); background-size: 161px; background-repeat: repeat;"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-    <html lang="en" className={crimsonPro.variable}>
-        <body className="bg-neutral-100">
-        <Gradient/>
-        {children}
+    <html lang="en" className={`${crimsonPro.variable}`}>
+        <body className="relative bg-neutral-100">
+            <BackgroundGradient classes='' opacity={.04}/> 
+            {children}
         </body>
     </html>
     );

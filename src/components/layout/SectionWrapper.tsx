@@ -1,7 +1,5 @@
 import React from 'react';
 import Section from './Section';
-import Gradient from '../shared/Gradient';
-//import Image from 'next/image';
 
 interface SectionWrapperProps {
     children: React.ReactElement<typeof Section> | React.ReactElement<typeof Section>[];
