@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className="bottom-0 z-50 flex flex-col items-center">
+        <div className="z-50 flex flex-col items-center">
         <footer className="relative w-4/5 md:w-3/4 lg:w-2/3 max-w-150 rounded-t-lg border-t-2 border-l-2 border-r-2 border-border-subtle bg-background py-6 px-12">
             <BackgroundGradient classes='' opacity={.06}/>
             <ul className="flex flex-row flex-wrap justify-between w-full py-2">

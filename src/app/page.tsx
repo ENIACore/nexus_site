@@ -9,9 +9,7 @@ import Footer from '../components/shared/Footer';
 const Page: React.FC = () => {
     return (
         <>
-            <header>
-                <Navbar/>
-            </header>
+            <Navbar/>
             <main className="py-8">
                 <SectionWrapper>
                     <Section>
