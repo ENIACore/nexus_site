@@ -12,31 +12,31 @@ const Navbar: React.FC = () => {
             <ul className="flex flex-row justify-around max-w-100 mt-4 mb-4 mx-auto">
                 <li className="group relative">
                     <a className="cursor-pointer">
-                        <House className="text-primary-600 hover:text-primary-300 transition-colors"/>
+                        <House className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </a>
                     <Tooltip text='Home'/>
                 </li>
                 <li className="group relative">
                     <a className="cursor-pointer">
-                        <Briefcase className="text-primary-600 hover:text-primary-300 transition-colors"/>
+                        <Briefcase className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </a>
                     <Tooltip text='Experience'/>
                 </li>
                 <li className="group relative">
                     <a className="cursor-pointer">
-                        <FolderDot className="text-primary-600 hover:text-primary-300 transition-colors"/>
+                        <FolderDot className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </a>
                     <Tooltip text='Projects'/>
                 </li>
                 <li className="group relative">
                     <a className="cursor-pointer">
-                        <FilePen className="text-primary-600 hover:text-primary-300 transition-colors"/>
+                        <FilePen className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </a>
                     <Tooltip text='Blogs'/>
                 </li>
                 <li className="group relative">
                     <a className="cursor-pointer">
-                        <Mail className="text-primary-600 hover:text-primary-300 transition-colors"/>
+                        <Mail className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </a>
                     <Tooltip text='Contact'/>
                 </li>

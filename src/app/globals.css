@@ -2,7 +2,11 @@
 
 /* Modern Minimal - Clean contemporary palette with soft muted paper texture */ 
 @theme {
-    /* Primary - Soft Navy (primary buttons, links, key highlights) */
+    /*
+        * Primary - Soft Navy 
+        * Light: Primary buttons, links, icons, borders, highlights
+        * Dark:
+    */
     --color-primary-50: #f4f7f9;
     --color-primary-100: #e8eef3;
     --color-primary-200: #c9d8e4;
@@ -15,7 +19,11 @@
     --color-primary-900: #1c2a36;
     --color-primary-950: #111b23;
 
-    /* Secondary - Terracotta (secondary buttons, tags, badges, hover states) */
+    /*
+        * Secondary - Terracotta
+        * Light: Secondary buttons, links, icons, borders, highlights; tooltips, tags, badges, social links
+        * Dark:
+    */
     --color-secondary-50: #fdf6f3;
     --color-secondary-100: #fbeae4;
     --color-secondary-200: #f6d3c7;
@@ -28,7 +36,11 @@
     --color-secondary-900: #653a30;
     --color-secondary-950: #361c17;
 
-    /* Accent - Sage (success states, emphasis, icons, small highlights) */
+    /*
+        * Accent - Sage
+        * Light: Success, small highlights 
+        * Dark:
+    */
     --color-accent-50: #f4f7f5;
     --color-accent-100: #e6ede9;
     --color-accent-200: #cddbd3;
@@ -41,7 +53,11 @@
     --color-accent-900: #2e3832;
     --color-accent-950: #181f1b;
 
-    /* Neutral - Warm tones (text, borders, backgrounds */
+    /*
+        * Neutral - Warm tones
+        * Light: Backgrounds, main text
+        * Dark:
+    */
     --color-neutral-50: #fdfcfa;
     --color-neutral-100: #f9f7f4;
     --color-neutral-200: #f4f2ee;
@@ -64,11 +80,13 @@
         /* Background */
         --background: var(--color-neutral-300);
         --background-subtle: var(--color-neutral-100);
+        --background-secondary: var(--color-secondary-300);
         /* --background-muted: var(); */
         
         /* Foreground & Text */
-        /* --foreground: var(); */
-        /* --foreground-muted: var(); */
+        --foreground: var(--color-primary-900);
+        --foreground-muted: var(--color-primary-400);
+        --foreground-secondary: var(--color-secondary-900);
         /* --foreground-subtle: var(); */
         
         /* Card */
@@ -83,7 +101,9 @@
         /* Secondary */
         /* --secondary: var(); */
         /* --secondary-hover: var(); */
-        /* --secondary-foreground: var(); */
+
+        /* Badges & Icons */
+        --badge: var(--color-secondary-400);
         
         /* Accent */
         /* --accent: var(); */
@@ -117,11 +137,13 @@
         /* Background */
         /* --background: var(); */
         /* --background-subtle: var(); */
+        /* --background-secondary: var(); */
         /* --background-muted: var(); */
         
         /* Foreground & Text */
         /* --foreground: var(); */
         /* --foreground-muted: var(); */
+        /* --foreground-secondary: var(); */
         /* --foreground-subtle: var(); */
         
         /* Card */
@@ -137,6 +159,9 @@
         /* --secondary: var(); */
         /* --secondary-hover: var(); */
         /* --secondary-foreground: var(); */
+
+        /* Badges & Icons */
+        /* --badge: var(); */
         
         /* Accent */
         /* --accent: var(); */
@@ -172,11 +197,13 @@
     /* Background */
     --color-background: var(--background);
     --color-background-subtle: var(--background-subtle);
+    --color-background-secondary: var(--background-secondary);
     /* --color-background-muted: var(); */
     
     /* Foreground & Text */
-    /* --color-foreground: var(); */
-    /* --color-foreground-muted: var(); */
+    --color-foreground: var(--foreground);
+    --color-foreground-muted: var(--foreground-muted);
+    --color-foreground-secondary: var(--foreground-secondary);
     /* --color-foreground-subtle: var(); */
     
     /* Card */
@@ -191,7 +218,9 @@
     /* Secondary */
     /* --color-secondary: var(); */
     /* --color-secondary-hover: var(); */
-    /* --color-secondary-foreground: var(); */
+
+    /* Badges & Icons */
+    --color-badge: var(--badge);
     
     /* Accent */
     /* --color-accent: var(); */

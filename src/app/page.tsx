@@ -15,6 +15,9 @@ const Page: React.FC = () => {
                 <Section>
                     <IntroSectionContent/>
                 </Section>
+                <Section>
+                    <span>tst</span>
+                </Section>
             </SectionWrapper>
             </main>
             {/* Footer element */}
