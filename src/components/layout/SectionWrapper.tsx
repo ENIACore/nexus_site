@@ -2,7 +2,7 @@ import React from 'react';
 import Section from './Section';
 
 interface SectionWrapperProps {
-    children: React.ReactElement<typeof Section> | React.ReactElement<typeof Section>[];
+    children: React.ReactNode;
 }
 
 // Tailwind order: position & layout -> alignment → sizing -> spacing -> visuals -> effects

@@ -8,6 +8,7 @@ import BulletList from '@/src/components/ui/BulletList';
 interface WorkExperienceProps {
     companyLogo: string;
     companyName: string;
+    logoClasses: string;
     jobTitle: string;
     dateRange: string;
     technologies: string[];
@@ -18,6 +19,7 @@ interface WorkExperienceProps {
 const WorkExperience: React.FC<WorkExperienceProps> = ({
     companyLogo,
     companyName,
+    logoClasses,
     jobTitle,
     dateRange,
     technologies,
@@ -30,8 +32,8 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                 alt={`${companyName} Logo`}
                 width={75}
                 height={75}
-                className="absolute top-0 right-0"
                 unoptimized
+                className={`${logoClasses} absolute top-0 right-0 h-18.75 w-auto`}
             />
             <SectionTitle classes="!my-0" title={companyName}/>
             <SubSectionTitle title={jobTitle}/>

@@ -12,7 +12,7 @@ const TextLink: React.FC<TextLinkProps> = ({text, classes, link}) => {
     return (
         <Link
             href={link}
-            className={`${classes} cursor-pointer text-base xs:text-sm font-normal text-badge hover:text-foreground-muted`}
+            className={`${classes} cursor-pointer text-base xs:text-sm font-normal text-foreground hover:text-foreground-muted`}
         >
         {text}
         </Link>
