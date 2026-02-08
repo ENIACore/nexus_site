@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { House, Briefcase, FolderDot, FilePen, Mail} from 'lucide-react';
 import Tooltip from '../ui/Tooltip';
 import BackgroundGradient from '../ui/BackgroundGradient';
@@ -11,33 +12,33 @@ const Navbar: React.FC = () => {
             <BackgroundGradient classes='' opacity={.06}/>
             <ul className="flex flex-row justify-around max-w-100 mt-4 mb-4 mx-auto">
                 <li className="group relative">
-                    <a className="cursor-pointer">
+                    <Link href="#" className="cursor-pointer">
                         <House className="text-foreground hover:text-foreground-muted transition-colors"/>
-                    </a>
+                    </Link>
                     <Tooltip text='Home'/>
                 </li>
                 <li className="group relative">
-                    <a className="cursor-pointer">
+                    <Link href="#" className="cursor-pointer">
                         <Briefcase className="text-foreground hover:text-foreground-muted transition-colors"/>
-                    </a>
+                    </Link>
                     <Tooltip text='Experience'/>
                 </li>
                 <li className="group relative">
-                    <a className="cursor-pointer">
+                    <Link href="#" className="cursor-pointer">
                         <FolderDot className="text-foreground hover:text-foreground-muted transition-colors"/>
-                    </a>
+                    </Link>
                     <Tooltip text='Projects'/>
                 </li>
                 <li className="group relative">
-                    <a className="cursor-pointer">
+                    <Link href="#" className="cursor-pointer">
                         <FilePen className="text-foreground hover:text-foreground-muted transition-colors"/>
-                    </a>
+                    </Link>
                     <Tooltip text='Blogs'/>
                 </li>
                 <li className="group relative">
-                    <a className="cursor-pointer">
+                    <Link href="#" className="cursor-pointer">
                         <Mail className="text-foreground hover:text-foreground-muted transition-colors"/>
-                    </a>
+                    </Link>
                     <Tooltip text='Contact'/>
                 </li>
             </ul>
