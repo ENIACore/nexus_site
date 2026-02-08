@@ -89,6 +89,7 @@
         --background: var(--color-neutral-300);
         --background-subtle: var(--color-neutral-100);
         --background-secondary: var(--color-secondary-300);
+        --background-emphasis: var(--color-neutral-700);
         /* --background-muted: var(); */
         
         /* Foreground & Text */
@@ -146,6 +147,7 @@
         /* --background: var(); */
         /* --background-subtle: var(); */
         /* --background-secondary: var(); */
+        /* --background-emphasis: var(); */
         /* --background-muted: var(); */
         
         /* Foreground & Text */
@@ -206,6 +208,7 @@
     --color-background: var(--background);
     --color-background-subtle: var(--background-subtle);
     --color-background-secondary: var(--background-secondary);
+    --color-background-emphasis: var(--background-emphasis);
     /* --color-background-muted: var(); */
     
     /* Foreground & Text */

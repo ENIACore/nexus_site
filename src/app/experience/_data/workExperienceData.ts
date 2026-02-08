@@ -12,7 +12,7 @@ export const workExperiences: WorkExperienceData[] = [
     {
         companyLogo: "/images/logos/IBM-logo.png",
         companyName: "IBM",
-        logoClasses: "!h-[40]",
+        logoClasses: "!h-7 md:!h-10",
         jobTitle: "Software Developer",
         dateRange: "October 2024 ◦ Present",
         technologies: [
@@ -33,7 +33,7 @@ export const workExperiences: WorkExperienceData[] = [
         companyLogo: "/images/logos/UWF-cyber-logo.png",
         companyName: "UWF Center for Cybersecurity",
         logoClasses: "",
-        jobTitle: "Web Developer II (Fullstack Developer)",
+        jobTitle: "Fullstack Developer",
         dateRange: "March 2023 ◦ October 2024",
         technologies: [
             '.NET Core',

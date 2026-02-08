@@ -30,24 +30,23 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
             <Image
                 src={companyLogo}
                 alt={`${companyName} Logo`}
-                width={75}
-                height={75}
-                unoptimized
-                className={`${logoClasses} absolute top-0 right-0 h-18.75 w-auto`}
+                width={56}
+                height={56}
+                className={`${logoClasses} absolute top-0 right-0 h-14 md:h-18.75 w-auto`}
             />
-            <SectionTitle classes="!my-0" title={companyName}/>
-            <SubSectionTitle title={jobTitle}/>
+            <SectionTitle classes="max-w-3/4 !my-0" title={companyName}/>
+            <SubSectionTitle classes='' title={jobTitle}/>
             <h4 className="text-base font-medium text-foreground-muted">
                 {dateRange}
             </h4>
-            <div className="my-2">
+            <div>
                 {technologies.map((tech, index) => (
-                    <Badge key={index} classes="mr-2" text={tech}/>
+                    <Badge key={index} classes="my-2 mr-2" text={tech}/>
                 ))}
             </div>
             <BulletList
                 items={accomplishments}
-                classes="mt-2 text-sm leading-loose"
+                classes="text-sm leading-loose"
             />
         </div>
     );

@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
                     <Tooltip text='Experience'/>
                 </li>
                 <li className="group relative">
-                    <Link href="#" className="cursor-pointer">
+                    <Link href="/projects" className="cursor-pointer">
                         <FolderDot className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </Link>
                     <Tooltip text='Projects'/>
