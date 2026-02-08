@@ -7,7 +7,7 @@ import React from 'react';
 const AboutSectionContent: React.FC = () => {
     return (
         <div className="flex flex-col">
-            <SectionTitle title='About Me'/>
+            <SectionTitle classes="" title='About Me'/>
             <div className="flex flex-col">
                 <div className="flex flex-col w-full">
                     <Paragraph classes="mb-4" text="Outside of being a software engineer I'm also an Engineer Officer (12A) in the Army National Guard and an avid lifter. I believe my military experience allows me to approach problems outside of a purely engineering angle. It's also helped me to appreciate the team aspect of engineering - I am always open to projects with other developers!"/>

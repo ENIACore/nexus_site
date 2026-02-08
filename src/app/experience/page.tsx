@@ -3,7 +3,8 @@ import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
 import Navbar from '../../components/shared/Navbar';
 import ExperienceSectionContent from './_components/ExperienceSectionContent';
-import Footer from '../../components/shared/Footer';
+//import Footer from '../../components/shared/Footer';
+import WorkExperience from './_components/WorkExperience';
 
 const ExperiencePage: React.FC = () => {
     return (
@@ -15,6 +16,9 @@ const ExperiencePage: React.FC = () => {
                 <SectionWrapper>
                     <Section>
                         <ExperienceSectionContent/>
+                    </Section>
+                    <Section>
+                        <WorkExperience/>
                     </Section>
                 </SectionWrapper>
             </main>
