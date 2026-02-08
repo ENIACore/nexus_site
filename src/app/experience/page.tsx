@@ -18,7 +18,6 @@ const ExperiencePage: React.FC = () => {
                     </Section>
                 </SectionWrapper>
             </main>
-            <Footer/>
         </>
     );
 }
