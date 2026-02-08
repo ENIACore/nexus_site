@@ -3,6 +3,7 @@ import SectionWrapper from '../components/layout/SectionWrapper';
 import Section from '../components/layout/Section';
 import Navbar from '../components/shared/Navbar';
 import IntroSectionContent from './_components/IntroSectionContent';
+import AboutSectionContent from './_components/AboutSectionContent';
 
 const Page: React.FC = () => {
     return (
@@ -10,13 +11,13 @@ const Page: React.FC = () => {
             <header>
             <Navbar/>
             </header>
-            <main>
+            <main className="py-8">
             <SectionWrapper>
                 <Section>
                     <IntroSectionContent/>
                 </Section>
                 <Section>
-                    <span>tst</span>
+                    <AboutSectionContent/>
                 </Section>
             </SectionWrapper>
             </main>

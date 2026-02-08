@@ -4,6 +4,7 @@ import TwitterIcon from '@/src/components/ui/TwitterIcon';
 import LinkedinIcon from '@/src/components/ui/LinkedinIcon';
 import GithubIcon from '@/src/components/ui/GithubIcon';
 import EmailIcon from '@/src/components/ui/EmailIcon';
+import Paragraph from '@/src/components/ui/Paragraph';
 
 // Tailwind order: position & layout -> alignment → sizing -> spacing -> visuals -> effects
 const IntroSectionContent: React.FC = () => {
@@ -40,7 +41,7 @@ const IntroSectionContent: React.FC = () => {
                     </a>
                 </div>
                 <div className="flex flex-row justify-center mt-2 mb-2">
-                    <p className="text-sm md:text-base text-foreground text-center">Hi, I'm Chase. I'm a Software Engineer with a passion for creating things. I built this site to share my passion projects and opinions on the industry.</p>
+                <Paragraph classes="text-center" text="Hi, I'm Chase. I'm a Software Engineer with ~3 YOE & a passion for creating things. I built this site to share my passion projects & opinions on the industry."/>
                 </div>
             </div>
         </>
