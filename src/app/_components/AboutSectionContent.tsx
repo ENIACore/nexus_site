@@ -20,7 +20,6 @@ const AboutSectionContent: React.FC = () => {
                         height={100}
                         width={100}
                         className="rounded-lg h-20 w-auto"
-                        unoptimized
                     />
                     <Image
                         src="/images/icons/army-icon.png"
@@ -28,7 +27,6 @@ const AboutSectionContent: React.FC = () => {
                         height={100}
                         width={100}
                         className="rounded-lg h-20 w-auto"
-                        unoptimized
                     />
                     <Image
                         src="/images/icons/lifter-icon.png"
@@ -36,7 +34,6 @@ const AboutSectionContent: React.FC = () => {
                         height={100}
                         width={100}
                         className="rounded-lg h-20 w-auto"
-                        unoptimized
                     />
                 </div>
             </div>

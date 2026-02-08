@@ -1,37 +1,55 @@
 import React from 'react';
-import { Section } from 'lucide-react';
+import Image from 'next/image';
 import SectionTitle from '@/src/components/ui/SectionTitle';
 import SubSectionTitle from '@/src/components/ui/SubSectionTitle';
 import Badge from '@/src/components/ui/Badge';
+import BulletList from '@/src/components/ui/BulletList';
 
+interface WorkExperienceProps {
+    companyLogo: string;
+    companyName: string;
+    jobTitle: string;
+    dateRange: string;
+    technologies: string[];
+    accomplishments: string[];
+}
 
 // Tailwind order: position & layout -> alignment → sizing -> spacing -> visuals -> effects
-const WorkExperience: React.FC = () => {
+const WorkExperience: React.FC<WorkExperienceProps> = ({
+    companyLogo,
+    companyName,
+    jobTitle,
+    dateRange,
+    technologies,
+    accomplishments
+}) => {
     return (
-        <div className="flex flex-col">
-            <SectionTitle classes="!my-0" title="IBM"/>
-            <SubSectionTitle title="Software Developer"/>
+        <div className="relative flex flex-col">
+            <Image
+                src={companyLogo}
+                alt={`${companyName} Logo`}
+                width={75}
+                height={75}
+                className="absolute top-0 right-0"
+                unoptimized
+            />
+            <SectionTitle classes="!my-0" title={companyName}/>
+            <SubSectionTitle title={jobTitle}/>
             <h4 className="text-base font-medium text-foreground-muted">
-                October 2024 ◦ Present
+                {dateRange}
             </h4>
             <div className="my-2">
-                <Badge classes="mr-2" text='skill'/>
-                <Badge classes="mr-2" text='skill'/>
-                <Badge classes="mr-2" text='skill'/>
+                {technologies.map((tech, index) => (
+                    <Badge key={index} classes="mr-2" text={tech}/>
+                ))}
             </div>
-            test
+            <BulletList
+                items={accomplishments}
+                classes="mt-2 text-sm leading-loose"
+            />
         </div>
     );
 };
-
-/*
-        <div className="flex flex-col">
-            <div className="flex flex-row justify-between items-center">
-                <SectionTitle title='My Journey'/>
-                <Route size={32} className="text-foreground-secondary"/>
-            </div>
-        </div>
-*/
 
 export default WorkExperience;
 

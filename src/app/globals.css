@@ -79,6 +79,10 @@
     html, body {
         font-family: var(--font-spectral);
     }
+    
+    .list-retro li::marker {
+        content: "⊹ ";
+    }
 
     :root {
         /* Background */
