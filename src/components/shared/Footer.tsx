@@ -13,19 +13,19 @@ const Footer: React.FC = () => {
             <BackgroundGradient classes='' opacity={.06}/>
             <ul className="flex flex-row flex-wrap justify-between w-full py-2">
                 <li className="group relative px-1">
-                    <TextLink classes="" text="Home" link=""/>
+                    <TextLink classes="" text="Home" link="/"/>
                 </li>
                 <li className="group relative px-1">
-                    <TextLink classes="" text="Experience" link="#"/>
+                    <TextLink classes="" text="Experience" link="/experience"/>
                 </li>
                 <li className="group relative px-1">
-                    <TextLink classes="" text="Projects" link="#"/>
+                    <TextLink classes="" text="Projects" link="/projects"/>
                 </li>
                 <li className="group relative px-1">
-                    <TextLink classes="" text="Blogs" link="#"/>
+                    <TextLink classes="" text="Blogs" link="/blogs"/>
                 </li>
                 <li className="group relative px-1">
-                    <TextLink classes="" text="Contact" link="#"/>
+                    <TextLink classes="" text="Contact" link="/contact"/>
                 </li>
             </ul>
 

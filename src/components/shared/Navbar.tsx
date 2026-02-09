@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
                     <Tooltip text='Blogs'/>
                 </li>
                 <li className="group relative">
-                    <Link href="#" className="cursor-pointer">
+                    <Link href="/contact" className="cursor-pointer">
                         <Mail className="text-foreground hover:text-foreground-muted transition-colors"/>
                     </Link>
                     <Tooltip text='Contact'/>
