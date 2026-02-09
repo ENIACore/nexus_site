@@ -19,6 +19,8 @@ const IntroSectionContent: React.FC = () => {
                         alt="Chase Lamkin profile picture"
                         height={150}
                         width={150}
+                        loading="eager"
+                        priority
                         className="h-auto rounded-full border-2 border-border"
                     />
                 </div>
