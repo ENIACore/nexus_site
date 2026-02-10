@@ -6,7 +6,7 @@ import { NAVIGATION_ITEMS } from '@/src/constants/navigation';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="relative layout-container mx-auto bg-background border-2 border-border-subtle rounded-b-lg">
+        <nav className="relative layout-container mx-auto mb-4 bg-background border-2 border-border-subtle rounded-b-lg">
             <BackgroundGradient className="rounded-b-lg" opacity={.06}/>
 
             <ul className="flex flex-row justify-around m-4">

@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import SectionTitle from '@/src/components/ui/SectionTitle';
-import SubSectionTitle from '@/src/components/ui/SubSectionTitle';
 import Badge from '@/src/components/ui/Badge';
 import BulletList from '@/src/components/ui/BulletList';
+import Heading from '@/src/components/ui/Heading';
 
 interface WorkExperienceProps {
     companyLogo: string;
@@ -25,29 +24,30 @@ const Job: React.FC<WorkExperienceProps> = ({
     accomplishments
 }) => {
     return (
-        <div className="relative flex flex-col">
+        <>
             <Image
                 src={companyLogo}
                 alt={`${companyName} Logo`}
                 width={56}
                 height={56}
-                className={`${logoClasses} absolute top-0 right-0 h-14 md:h-18.75 w-auto`}
+                className={`${logoClasses} absolute top-8 right-4 h-14 md:h-18.75 w-auto`}
             />
-            <SectionTitle className="max-w-3/4 my-0!" title={companyName}/>
-            <SubSectionTitle title={jobTitle}/>
-            <h4 className="text-base font-medium text-foreground-muted">
-                {dateRange}
-            </h4>
+            <Heading className='' title={companyName} size='xl'/>
+            <Heading className='' title={jobTitle} size='lg'/>
+            <Heading className='' title={dateRange} size='bs'/>
+
             <div>
-                {technologies.map((tech, index) => (
-                    <Badge key={index} className="my-2 mr-2" text={tech}/>
-                ))}
+            {technologies.map((tech, index) => (
+                <Badge key={index} className="my-2 mr-2" text={tech}/>
+            ))}
             </div>
+
             <BulletList
                 items={accomplishments}
-                className="text-sm leading-loose"
+                className=""
             />
-        </div>
+
+        </>
     );
 };
 

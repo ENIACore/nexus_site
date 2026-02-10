@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
@@ -11,7 +10,7 @@ const ExperiencePage: React.FC = () => {
     return (
         <SectionWrapper>
 
-            <Section>
+            <Section title='My Journey'>
                 <Intro/>
             </Section>
 
@@ -26,4 +25,3 @@ const ExperiencePage: React.FC = () => {
 }
 
 export default ExperiencePage;
-*/

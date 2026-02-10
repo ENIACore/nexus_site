@@ -5,10 +5,8 @@ import Text from '@/src/components/ui/Text';
 const About: React.FC = () => {
     return (
         <>
-            <div>
-                <Text className='mb-4' text="Beyond being a software engineer, I'm an Engineer Officer (12A) in the Army National Guard and an avid lifter. My military background has given me a broader perspective on problem solving and deepened my appreciation for the teamwork in engineering. I'm always open to projects with other developers!" size='bs'/>
-                <Text className='mb-4' text="Coding isn't just my job; it's also how I spend most of my free time when I'm not staying active. My recent obsession is creating software to manage my home server, but I also have a variety of other personal projects. All my projects are on my GitHub and open source." size='bs'/>
-            </div>
+            <Text className='mb-4' text="Beyond being a software engineer, I'm an Engineer Officer (12A) in the Army National Guard and an avid lifter. My military background has given me a broader perspective on problem solving and deepened my appreciation for the teamwork in engineering. I'm always open to projects with other developers!" size='bs'/>
+            <Text className='' text="Coding isn't just my job; it's also how I spend most of my free time when I'm not staying active. My recent obsession is creating software to manage my home server, but I also have a variety of other personal projects. All my projects are on my GitHub and open source." size='bs'/>
 
             <div className="flex flex-row items-center justify-around mt-4">
                 <Image

@@ -1,4 +1,5 @@
 import React from 'react';
+import Text from './Text';
 
 interface BulletListProps {
     items: string[]
@@ -8,10 +9,10 @@ interface BulletListProps {
 // Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
 const BulletList: React.FC<BulletListProps> = ({items, className = ''}) => {
     return (
-        <ul className={`${className} text-base font-normal text-foreground list-retro list-inside xs:text-sm`}>
-            {items.map((item, index) => (
+        <ul className={`${className} list-disc list-inside`}>
+            {items.map((text, index) => (
                 <li key={index}>
-                    {item}
+                    <Text className='' text={text} size='bs'/>
                 </li>
             ))}
         </ul>

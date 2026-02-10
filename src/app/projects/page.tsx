@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
@@ -12,16 +11,14 @@ const ProjectsPage: React.FC = () => {
     return (
         <SectionWrapper>
 
-            <Section>
+            <Section title='My Projects'>
                 <Intro/>
             </Section>
 
-            <Section>
-                <PreviewList>
-                {projects.map((project, index) => (
-                    <Preview key={index} {...project} />
-                ))}
-                </PreviewList>
+            <Section title='Projects'>
+            {projects.map((project, index) => (
+                <Preview key={index} {...project} />
+            ))}
             </Section>
 
         </SectionWrapper>
@@ -29,4 +26,3 @@ const ProjectsPage: React.FC = () => {
 }
 
 export default ProjectsPage;
-*/

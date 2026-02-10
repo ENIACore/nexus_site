@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative layout-container mx-auto bg-background border-2 border-border-subtle rounded-t-lg">
+        <footer className="relative layout-container mx-auto mt-4 bg-background border-2 border-border-subtle rounded-t-lg">
             <BackgroundGradient className="rounded-t-lg" opacity={.06}/>
 
             <ul className="flex flex-row justify-around flex-wrap m-4">

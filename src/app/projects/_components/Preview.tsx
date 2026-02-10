@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import Paragraph from '@/src/components/ui/Paragraph';
 import Badge from '@/src/components/ui/Badge';
 import BackgroundGradient from '@/src/components/ui/BackgroundGradient';
 import ButtonLink from '@/src/components/ui/ButtonLink';
+import Text from '@/src/components/ui/Text';
+import Heading from '@/src/components/ui/Heading';
 
 interface PreviewProps {
     thumbnail: string;
@@ -23,7 +24,7 @@ const Preview: React.FC<PreviewProps> = ({
     viewMoreLink
 }) => {
     return (
-        <div className="group relative flex flex-col my-2 rounded-lg sm:flex-row sm:h-37.5">
+        <div className="group relative flex flex-col sm:flex-row sm:h-37.5 rounded-lg overflow-hidden bg-background-emphasis p-4 sm:p-0 m-4">
             <BackgroundGradient className="rounded-lg" opacity={.06}/>
             <Thumbnail thumbnail={thumbnail} projectName={projectName} />
             <Content
@@ -38,14 +39,14 @@ const Preview: React.FC<PreviewProps> = ({
 
 const Thumbnail: React.FC<{ thumbnail: string; projectName: string }> = ({ thumbnail, projectName }) => {
     return (
-        <div className="flex flex-row justify-center pt-4 w-full bg-background-emphasis rounded-t-lg sm:w-37.5 sm:h-37.5 sm:shrink-0 sm:rounded-t-none sm:rounded-l-lg sm:pt-0 sm:block">
-            <div className="shrink-0 w-50 h-50 rounded-l-lg overflow-hidden sm:w-full sm:h-full">
+        <div className="flex flex-row justify-center overflow-hidden">
+            <div className="w-50 h-50 sm:w-37.5 sm:h-37.5 hover-scale">
                 <Image
                     src={thumbnail}
                     alt={`${projectName} thumbnail`}
                     height={200}
                     width={200}
-                    className="w-full h-full object-cover sm:rounded-l-lg sm:transition-transform sm:duration-300 sm:group-hover:scale-105"
+                    className="w-full h-full object-cover rounded-lg"
                 />
             </div>
         </div>
@@ -58,20 +59,15 @@ const Content: React.FC<{ projectName: string; description: string; technologies
     technologies
 }) => {
     return (
-        <div className="flex-1 flex flex-col justify-between p-2 bg-background-emphasis overflow-hidden sm:rounded-r-lg">
-            <div>
-                <h4 className="text-lg font-semibold text-foreground-neutral pointer-events-none sm:transition-transform sm:duration-300 sm:group-hover:scale-105">
-                    {projectName}
-                </h4>
-                <Paragraph
-                    className='text-foreground-neutral pointer-events-none sm:transition-transform sm:duration-300 sm:group-hover:scale-105'
-                    text={description}
-                />
+        <div className="flex flex-col flex-1 justify-between overflow-hidden">
+            <div className="hover-scale mt-4 sm:mt-2 pl-2">
+                <Heading className="text-foreground-neutral pointer-events-none" title={projectName} size="md"/>
+                <Text className='text-foreground-neutral pointer-events-none' text={description} size='bs'/>
             </div>
-            <div className="flex gap-2 mt-2">
-                {technologies.map((tech, index) => (
-                    <Badge key={index} text={tech} className="sm:transition-transform sm:duration-300 sm:group-hover:scale-105"/>
-                ))}
+            <div className="hover-scale mt-4 sm:mt-auto mb-2 pl-2">
+            {technologies.map((tech, index) => (
+                <Badge key={index} text={tech} className="mt-1 mr-1"/>
+            ))}
             </div>
         </div>
     );
@@ -80,16 +76,16 @@ const Content: React.FC<{ projectName: string; description: string; technologies
 const Actions: React.FC<{ githubLink: string; viewMoreLink: string }> = ({ githubLink, viewMoreLink }) => {
     return (
         <>
-            {/* Small screen: static buttons below content */}
-            <div className="flex flex-row flex-wrap px-2 pb-2 pt-0 bg-background-emphasis rounded-b-lg sm:px-4 sm:hidden">
-                <ButtonLink className='z-10 mr-2 mb-2 text-2xl! xs:text-lg' text='Github' link={githubLink}/>
-                <ButtonLink className='z-10 mb-2 text-2xl! xs:text-lg' text='View More' link={viewMoreLink}/>
+            {/* Extra small screen: static buttons below content */}
+            <div className="sm:hidden flex flex-row flex-wrap mt-2">
+                <ButtonLink className='z-10 mr-2 mt-2' text='Github' link={githubLink} size='lg'/>
+                <ButtonLink className='z-10 mt-2' text='View More' link={viewMoreLink} size='lg'/>
             </div>
-            {/* Large screen: hover overlay */}
-            <div className="absolute inset-0 hidden items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:flex">
+            {/* Small screen and larger: hover overlay */}
+            <div className="hidden sm:flex flex-row items-center justify-center absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute inset-0 bg-neutral-300 opacity-25" />
-                <ButtonLink className='z-10 mr-4 text-2xl! xs:text-lg' text='Github' link={githubLink}/>
-                <ButtonLink className='z-10 text-2xl! xs:text-lg' text='View More' link={viewMoreLink}/>
+                <ButtonLink className='z-10 mr-2' text='Github' link={githubLink} size='lg'/>
+                <ButtonLink className='z-10' text='View More' link={viewMoreLink} size='lg'/>
             </div>
         </>
     );

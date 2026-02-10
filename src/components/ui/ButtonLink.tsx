@@ -3,21 +3,33 @@ import React from 'react';
 import BackgroundGradient from './BackgroundGradient';
 
 interface ButtonLinkProps {
-    text: string
-    link: string
-    className?: string
+    className?: string;
+    link: string;
+    text: string;
+    size: 'lg'; // TODO - Add other sizes
 }
 
-// Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
-const ButtonLink: React.FC<ButtonLinkProps> = ({text, link, className}) => {
+const ButtonLink: React.FC<ButtonLinkProps> = ({className, text, link, size}) => {
     return (
-        <Link
-            href={link}
-            className={`${className} relative inline-block pt-1 px-2 text-base font-semibold text-foreground-neutral bg-background-primary rounded-lg transition-colors duration-300 cursor-pointer hover:bg-background-muted xs:text-sm`}
-        >
-            <BackgroundGradient className="rounded-lg" opacity={.06}/>
-            {text}
-        </Link>
+        <>
+        {size === 'lg' && (
+            <Link
+                href={link}
+                className={`${className} relative inline-block text-2xl font-bold text-foreground-neutral bg-background-primary hover:bg-background-muted transition-colors duration-300 cursor-pointer rounded-lg overflow-hidden px-2 py-1`}
+            >
+                <BackgroundGradient className="" opacity={.06}/>
+                {text}
+            </Link>
+        )}
+        </>
     );
 };
 export default ButtonLink;
+
+
+/*
+    *
+    *
+                <ButtonLink className='z-10 mr-2 mb-2 text-2xl! xs:text-lg' text='Github' link={githubLink}/>
+                <ButtonLink className='z-10 mb-2 text-2xl! xs:text-lg' text='View More' link={viewMoreLink}/>
+                */

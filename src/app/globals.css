@@ -79,10 +79,6 @@
     html, body {
         font-family: var(--font-spectral);
     }
-    
-    .list-retro li::marker {
-        content: "○ ";
-    }
 
     :root {
         /* Background */
@@ -275,5 +271,8 @@
 @layer utilities {
     .layout-container {
         @apply max-w-150 w-4/5 md:w-3/4 lg:w-2/3;
+    }
+    .hover-scale {
+        @apply sm:transition-transform sm:duration-300 sm:group-hover:scale-105;
     }
 }

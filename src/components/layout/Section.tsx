@@ -11,11 +11,11 @@ interface SectionProps {
 // Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
 const Section: React.FC<SectionProps> = ({className, children, title}) => {
     return (
-        <div className={`${className} relative bg-background rounded-lg layout-container p-4 m-4`}>
+        <div className={`${className} relative bg-background rounded-lg layout-container m-4 p-4`}>
             <BackgroundGradient className="rounded-lg" opacity={.06}/> 
 
             {title && <Heading size='lg' title={title} className='my-4'/>}
-            <div className="flex flex-col">
+            <div className="flex flex-col my-4">
                 {children}
             </div>
         </div>
