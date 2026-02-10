@@ -6,12 +6,13 @@ interface SectionProps {
     className?: string;
     children: React.ReactElement | React.ReactElement[];
     title?: string;
+    center?: boolean;
 }
 
 // Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
-const Section: React.FC<SectionProps> = ({className, children, title}) => {
+const Section: React.FC<SectionProps> = ({className, children, title, center = false}) => {
     return (
-        <div className={`${className} relative bg-background rounded-lg layout-container m-4 p-4`}>
+        <div className={`${className} relative bg-background rounded-lg layout-container m-4 p-4 ${center ? 'text-center' : ''}`}>
             <BackgroundGradient className="rounded-lg" opacity={.06}/> 
 
             {title && <Heading size='lg' title={title} className='my-4'/>}

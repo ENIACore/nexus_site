@@ -7,12 +7,11 @@ interface TextLinkProps {
     link: string
 }
 
-// Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
 const TextLink: React.FC<TextLinkProps> = ({text, className, link}) => {
     return (
         <Link
             href={link}
-            className={`${className} text-base font-normal text-foreground cursor-pointer hover:text-foreground-muted xs:text-sm`}
+            className={`${className} text-base font-normal text-foreground cursor-pointer hover:text-foreground-muted`}
         >
         {text}
         </Link>

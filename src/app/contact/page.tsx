@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
@@ -8,7 +7,7 @@ const ContactPage: React.FC = () => {
     return (
         <SectionWrapper>
 
-            <Section>
+            <Section title='Contact Me' center={true}>
                 <Contact/>
             </Section>
 
@@ -17,4 +16,3 @@ const ContactPage: React.FC = () => {
 }
 
 export default ContactPage;
-*/
