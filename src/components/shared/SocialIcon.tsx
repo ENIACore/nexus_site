@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { SOCIAL_LINKS } from '@/src/constants/socials';
 
-interface SocialLinksProps {
+interface SocialIconProps {
     className?: string;
 }
 
-// Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
-const SocialLinks: React.FC<SocialLinksProps> = ({ className = '' }) => {
+const SocialIcon: React.FC<SocialIconProps> = ({ className = '' }) => {
     return (
+
         <div className={`flex flex-row justify-center ${className}`}>
             {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
@@ -27,4 +26,4 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ className = '' }) => {
     );
 };
 
-export default SocialLinks;
+export default SocialIcon;

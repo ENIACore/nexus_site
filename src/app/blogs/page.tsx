@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
@@ -25,3 +26,4 @@ const BlogsPage: React.FC = () => {
 }
 
 export default BlogsPage;
+*/

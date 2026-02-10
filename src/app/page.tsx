@@ -8,15 +8,12 @@ import About from './_components/About';
 const Page: React.FC = () => {
     return (
         <SectionWrapper>
-
             <Section>
                 <Intro/>
             </Section>
-
-            <Section>
+            <Section title='About Me'>
                 <About/>
             </Section>
-
         </SectionWrapper>
     );
 }

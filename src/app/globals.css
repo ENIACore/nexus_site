@@ -271,3 +271,9 @@
     /* --color-success: var(); */
     /* --color-success-foreground: var(); */
 }
+
+@layer utilities {
+    .layout-container {
+        @apply max-w-150 w-4/5 md:w-3/4 lg:w-2/3;
+    }
+}

@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 import Section from '../../components/layout/Section';
@@ -16,3 +17,4 @@ const ContactPage: React.FC = () => {
 }
 
 export default ContactPage;
+*/
