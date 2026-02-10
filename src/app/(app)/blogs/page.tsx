@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionWrapper from '../../components/layout/SectionWrapper';
-import Section from '../../components/layout/Section';
+import SectionWrapper from '@/src/components/layout/SectionWrapper';
+import Section from '@/src/components/layout/Section';
 import Intro from './_components/Intro';
 import Preview from './_components/Preview';
 import { blogs } from './_data/blogs';

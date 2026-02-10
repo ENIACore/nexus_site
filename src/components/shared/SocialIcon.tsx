@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { SOCIAL_LINKS } from '@/src/constants/socials';
 
 interface SocialIconProps {
     className?: string;

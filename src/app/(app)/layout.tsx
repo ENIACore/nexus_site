@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { spectral } from '../lib/fonts';
-import "./globals.css";
-import BackgroundGradient from "../components/ui/BackgroundGradient";
-import ThemeToggle from "../components/ui/ThemeToggle";
-import Navbar from "../components/shared/Navbar";
-import Footer from "../components/shared/Footer";
+import { spectral } from '@/src/lib/fonts';
+import "../globals.css";
+import BackgroundGradient from "@/src/components/ui/BackgroundGradient";
+import ThemeToggle from "@/src/components/ui/ThemeToggle";
+import Navbar from "@/src/components/shared/Navbar";
+import Footer from "@/src/components/shared/Footer";
 
 export const metadata: Metadata = {
   title: "Chase's Server",

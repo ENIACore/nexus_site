@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionWrapper from '../../components/layout/SectionWrapper';
-import Section from '../../components/layout/Section';
+import SectionWrapper from '@/src/components/layout/SectionWrapper';
+import Section from '@/src/components/layout/Section';
 import Intro from './_components/Intro';
 import Job from './_components/Job';
 import { jobs } from './_data/jobs';
