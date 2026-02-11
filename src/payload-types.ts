@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    projects: Project;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,13 +79,14 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   fallbackLocale: null;
   globals: {};
@@ -119,7 +121,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -144,7 +146,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -160,10 +162,132 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  name: string;
+  description: string;
+  thumbnail: number | Media;
+  github?: string | null;
+  view?: string | null;
+  technologies?:
+    | (
+        | 'TypeScript'
+        | 'JavaScript'
+        | 'Python'
+        | 'Golang'
+        | 'Rust'
+        | 'Java'
+        | 'C'
+        | 'C++'
+        | 'C#'
+        | 'PHP'
+        | 'Ruby'
+        | 'Swift'
+        | 'Kotlin'
+        | 'Bash'
+        | 'PowerShell'
+        | 'R'
+        | 'Scala'
+        | 'Dart'
+        | 'Elixir'
+        | 'Haskell'
+        | 'Lua'
+        | 'MATLAB'
+        | 'React'
+        | 'Next.js'
+        | 'Vue.js'
+        | 'Nuxt.js'
+        | 'Svelte'
+        | 'SvelteKit'
+        | 'Angular'
+        | 'Astro'
+        | 'Remix'
+        | 'HTMX'
+        | 'Tailwind CSS'
+        | 'Sass'
+        | 'Node.js'
+        | 'Express'
+        | 'Fastify'
+        | 'NestJS'
+        | 'Django'
+        | 'Flask'
+        | 'FastAPI'
+        | 'Rails'
+        | 'Laravel'
+        | 'Spring Boot'
+        | 'ASP.NET'
+        | 'Gin'
+        | 'Fiber'
+        | 'Phoenix'
+        | 'PostgreSQL'
+        | 'MySQL'
+        | 'SQLite'
+        | 'MongoDB'
+        | 'Redis'
+        | 'Elasticsearch'
+        | 'DynamoDB'
+        | 'Supabase'
+        | 'PlanetScale'
+        | 'CockroachDB'
+        | 'Cassandra'
+        | 'InfluxDB'
+        | 'Docker'
+        | 'Kubernetes'
+        | 'AWS'
+        | 'Google Cloud'
+        | 'Azure'
+        | 'Terraform'
+        | 'Ansible'
+        | 'GitHub Actions'
+        | 'GitLab CI'
+        | 'Jenkins'
+        | 'Nginx'
+        | 'Caddy'
+        | 'Cloudflare'
+        | 'Vercel'
+        | 'Netlify'
+        | 'Railway'
+        | 'Fly.io'
+        | 'React Native'
+        | 'Flutter'
+        | 'Expo'
+        | 'SwiftUI'
+        | 'Jetpack Compose'
+        | 'TensorFlow'
+        | 'PyTorch'
+        | 'LangChain'
+        | 'OpenAI API'
+        | 'Hugging Face'
+        | 'scikit-learn'
+        | 'GraphQL'
+        | 'REST'
+        | 'gRPC'
+        | 'WebSockets'
+        | 'Prisma'
+        | 'Drizzle'
+        | 'Payload CMS'
+        | 'Strapi'
+        | 'WordPress'
+        | 'Storybook'
+        | 'Vite'
+        | 'Webpack'
+        | 'Turborepo'
+        | 'pnpm'
+        | 'Linux'
+        | 'Git'
+      )[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -180,20 +304,24 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -203,10 +331,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -226,7 +354,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -271,6 +399,20 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  name?: T;
+  description?: T;
+  thumbnail?: T;
+  github?: T;
+  view?: T;
+  technologies?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

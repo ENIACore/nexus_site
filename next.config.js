@@ -1,10 +1,9 @@
-import { withPayload } from "@payloadcms/next/withPayload";
+import { withPayload } from '@payloadcms/next/withPayload'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
+    reactCompiler: false,
+    allowedDevOrigins: ["172.20.10.3"],
 }
 
-export default withPayload(nextConfig)
+export default withPayload(nextConfig) 
