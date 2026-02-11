@@ -168,6 +168,10 @@ export interface Media {
  */
 export interface Project {
   id: number;
+  /**
+   * Lower numbers appear first
+   */
+  order: number;
   name: string;
   description: string;
   thumbnail: number | Media;
@@ -290,6 +294,10 @@ export interface Project {
  */
 export interface Blog {
   id: number;
+  /**
+   * Lower numbers appear first
+   */
+  order: number;
   title: string;
   description: string;
   thumbnail: number | Media;
@@ -424,6 +432,7 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
+  order?: T;
   name?: T;
   description?: T;
   thumbnail?: T;
@@ -438,6 +447,7 @@ export interface ProjectsSelect<T extends boolean = true> {
  * via the `definition` "blogs_select".
  */
 export interface BlogsSelect<T extends boolean = true> {
+  order?: T;
   title?: T;
   description?: T;
   thumbnail?: T;

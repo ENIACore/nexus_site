@@ -6,6 +6,15 @@ export const Projects: CollectionConfig = {
     upload: false,
     fields: [
         {
+            name: 'order',
+            type: 'number',
+            required: true,
+            defaultValue: 0,
+            admin: {
+                description: 'Lower numbers appear first'
+            }
+        },
+        {
             name: 'name',
             type: 'text',
             required: true,

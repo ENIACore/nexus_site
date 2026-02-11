@@ -13,6 +13,7 @@ async function ProjectsPage(): Promise<React.ReactNode> {
     const { docs } = await payload.find({
         collection: 'projects',
         depth: 1,
+        sort: 'order',
     })
     const projects = docs
 

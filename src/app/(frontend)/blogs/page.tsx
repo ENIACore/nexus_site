@@ -15,6 +15,7 @@ async function BlogsPage(): Promise<React.ReactNode> {
     const { docs } = await payload.find({
         collection: 'blogs',
         depth: 1,
+        sort: 'order',
     })
     const blogs = docs
 
