@@ -5,28 +5,29 @@ import Text from '@/src/components/ui/Text';
 
 
 interface PreviewProps {
-    title: string;
     description: string;
-    thumbnail: string;
-    readMoreLink?: string;
+    url: string;
+    alt: string;
+    view?: string;
 }
 
-const Preview: React.FC<PreviewProps> = ({title, description, thumbnail, readMoreLink = '#'}) => {
+const Preview: React.FC<PreviewProps> = ({description, url, alt, view = '#'}) => {
     return (
         <div className="flex flex-col sm:flex-row items-center">
             <div className="w-50 h-50 shrink-0">
                     <Image
-                        src={thumbnail}
-                        alt={`blog \"${title}\" thumbnail`}
+                        src={url}
+                        alt={alt}
                         height={200}
                         width={200}
                         className="w-full h-full object-cover rounded-lg"
-                        unoptimized
+                        loading='eager'
+                        priority
                     />
             </div>
             <div className="flex flex-col p-4">
                 <Text className='text-center' text={description} size='bs'/>
-                <ButtonLink className='mx-auto mt-4' link={readMoreLink}  text='View Blog' size='lg'/>
+                <ButtonLink className='mx-auto mt-4' link={view}  text='View Blog' size='lg'/>
             </div>
         </div>
     );

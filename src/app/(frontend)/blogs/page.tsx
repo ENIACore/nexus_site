@@ -3,9 +3,21 @@ import SectionWrapper from '@/src/components/layout/SectionWrapper';
 import Section from '@/src/components/layout/Section';
 import Intro from './_components/Intro';
 import Preview from './_components/Preview';
-import { blogs } from './_data/blogs';
+//import { blogs } from './_data/blogs';
+//
+import { getPayload } from 'payload'
+import config from '@payload-config'
+import type { Media } from '@/src/payload-types';
 
-const BlogsPage: React.FC = () => {
+async function BlogsPage(): Promise<React.ReactNode> {
+
+    const payload = await getPayload({ config })
+    const { docs } = await payload.find({
+        collection: 'blogs',
+        depth: 1,
+    })
+    const blogs = docs
+
     return (
         <SectionWrapper>
 
@@ -13,11 +25,14 @@ const BlogsPage: React.FC = () => {
                 <Intro/>
             </Section>
 
-            {blogs.map((blog, index) => (
-            <Section title={blog.title} key={index}>
-                <Preview {...blog} />
-            </Section>
-            ))}
+            {blogs.map((blog, index) => {
+                const thumbnail = blog.thumbnail as Media;
+                return (
+                    <Section title={blog.title} key={index}>
+                        <Preview  description={blog.description} url={thumbnail.url ?? ''} alt={thumbnail.alt} view={blog.view ?? '#'}/>
+                    </Section>
+                );
+            })}
 
         </SectionWrapper>
     );

@@ -8,6 +8,7 @@ import sharp from "sharp";
 import { Users } from "@/src/collections/Users";
 import { Media } from "@/src/collections/Media";
 import { Projects } from "@/src/collections/Projects";
+import { Blogs } from "@/src/collections/Blogs";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -23,6 +24,7 @@ export default buildConfig({
         Users, 
         Media,
         Projects,
+        Blogs,
     ],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",
