@@ -9,6 +9,8 @@ import { Users } from "@/src/collections/Users";
 import { Media } from "@/src/collections/Media";
 import { Projects } from "@/src/collections/Projects";
 import { Blogs } from "@/src/collections/Blogs";
+import { Jobs } from '@/src/collections/Jobs';
+import { SocialLinks } from "@/src/globals/SocialLinks";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,11 +22,15 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
+    globals: [
+        SocialLinks,
+    ],
     collections: [
         Users, 
         Media,
         Projects,
         Blogs,
+        Jobs,
     ],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || "",

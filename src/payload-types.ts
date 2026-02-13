@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     projects: Project;
     blogs: Blog;
+    jobs: Job;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,6 +83,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
+    jobs: JobsSelect<false> | JobsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -91,8 +93,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'social-links': SocialLink;
+  };
+  globalsSelect: {
+    'social-links': SocialLinksSelect<false> | SocialLinksSelect<true>;
+  };
   locale: null;
   user: User;
   jobs: {
@@ -307,6 +313,133 @@ export interface Blog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "jobs".
+ */
+export interface Job {
+  id: number;
+  /**
+   * Lower numbers appear first
+   */
+  order: number;
+  company: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  technologies?:
+    | (
+        | 'TypeScript'
+        | 'JavaScript'
+        | 'Python'
+        | 'Golang'
+        | 'Rust'
+        | 'Java'
+        | 'C'
+        | 'C++'
+        | 'C#'
+        | 'PHP'
+        | 'Ruby'
+        | 'Swift'
+        | 'Kotlin'
+        | 'Bash'
+        | 'PowerShell'
+        | 'R'
+        | 'Scala'
+        | 'Dart'
+        | 'Elixir'
+        | 'Haskell'
+        | 'Lua'
+        | 'MATLAB'
+        | 'React'
+        | 'Next.js'
+        | 'Vue.js'
+        | 'Nuxt.js'
+        | 'Svelte'
+        | 'SvelteKit'
+        | 'Angular'
+        | 'Astro'
+        | 'Remix'
+        | 'HTMX'
+        | 'Tailwind CSS'
+        | 'Sass'
+        | 'Node.js'
+        | 'Express'
+        | 'Fastify'
+        | 'NestJS'
+        | 'Django'
+        | 'Flask'
+        | 'FastAPI'
+        | 'Rails'
+        | 'Laravel'
+        | 'Spring Boot'
+        | 'ASP.NET'
+        | 'Gin'
+        | 'Fiber'
+        | 'Phoenix'
+        | 'PostgreSQL'
+        | 'MySQL'
+        | 'SQLite'
+        | 'MongoDB'
+        | 'Redis'
+        | 'Elasticsearch'
+        | 'DynamoDB'
+        | 'Supabase'
+        | 'PlanetScale'
+        | 'CockroachDB'
+        | 'Cassandra'
+        | 'InfluxDB'
+        | 'Docker'
+        | 'Kubernetes'
+        | 'AWS'
+        | 'Google Cloud'
+        | 'Azure'
+        | 'Terraform'
+        | 'Ansible'
+        | 'GitHub Actions'
+        | 'GitLab CI'
+        | 'Jenkins'
+        | 'Nginx'
+        | 'Caddy'
+        | 'Cloudflare'
+        | 'Vercel'
+        | 'Netlify'
+        | 'Railway'
+        | 'Fly.io'
+        | 'React Native'
+        | 'Flutter'
+        | 'Expo'
+        | 'SwiftUI'
+        | 'Jetpack Compose'
+        | 'TensorFlow'
+        | 'PyTorch'
+        | 'LangChain'
+        | 'OpenAI API'
+        | 'Hugging Face'
+        | 'scikit-learn'
+        | 'GraphQL'
+        | 'REST'
+        | 'gRPC'
+        | 'WebSockets'
+        | 'Prisma'
+        | 'Drizzle'
+        | 'Payload CMS'
+        | 'Strapi'
+        | 'WordPress'
+        | 'Storybook'
+        | 'Vite'
+        | 'Webpack'
+        | 'Turborepo'
+        | 'pnpm'
+        | 'Linux'
+        | 'Git'
+      )[]
+    | null;
+  accomplishments: string[];
+  logo: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -344,6 +477,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'blogs';
         value: number | Blog;
+      } | null)
+    | ({
+        relationTo: 'jobs';
+        value: number | Job;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -457,6 +594,22 @@ export interface BlogsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "jobs_select".
+ */
+export interface JobsSelect<T extends boolean = true> {
+  order?: T;
+  company?: T;
+  title?: T;
+  startDate?: T;
+  endDate?: T;
+  technologies?: T;
+  accomplishments?: T;
+  logo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -494,6 +647,41 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "social-links".
+ */
+export interface SocialLink {
+  id: number;
+  /**
+   * Enter your LinkedIn username (e.g., "yourprofile" from linkedin.com/in/yourprofile)
+   */
+  linkedin?: string | null;
+  /**
+   * Enter your GitHub username (e.g., "yourusername" from github.com/yourusername)
+   */
+  github?: string | null;
+  /**
+   * Enter your Twitter/X username (e.g., "yourusername" from x.com/yourusername)
+   */
+  twitter?: string | null;
+  email?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "social-links_select".
+ */
+export interface SocialLinksSelect<T extends boolean = true> {
+  linkedin?: T;
+  github?: T;
+  twitter?: T;
+  email?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

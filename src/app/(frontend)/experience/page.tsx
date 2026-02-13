@@ -3,10 +3,22 @@ import SectionWrapper from '@/src/components/layout/SectionWrapper';
 import Section from '@/src/components/layout/Section';
 import Intro from './_components/Intro';
 import Job from './_components/Job';
-import { jobs } from './_data/jobs';
 
-// Tailwind CSS class order: Layout -> Flex/Grid -> Spacing -> Sizing -> Typography -> Visual -> Effects -> Misc -> State -> Responsive
-const ExperiencePage: React.FC = () => {
+import { getPayload } from 'payload'
+import config from '@payload-config'
+import type { Media } from '@/src/payload-types';
+
+
+async function ExperiencePage(): Promise<React.ReactNode> {
+
+    const payload = await getPayload({ config })
+    const { docs } = await payload.find({
+        collection: 'jobs',
+        depth: 1,
+        sort: 'order',
+    })
+    const jobs = docs
+
     return (
         <SectionWrapper>
 
@@ -14,11 +26,14 @@ const ExperiencePage: React.FC = () => {
                 <Intro/>
             </Section>
 
-            {jobs.map((job, index) => (
-            <Section key={index}>
-                <Job {...job} />
-            </Section>
-            ))}
+            {jobs.map((job, index) => {
+                const logo = job.logo as Media
+                return (
+                    <Section key={index}>
+                        <Job company={job.company} jobTitle={job.title} startDate={job.startDate} endDate={job.endDate} technologies={job.technologies ? [...job.technologies] : undefined} logo={logo.url ?? ''} alt={logo.alt} accomplishments={job.accomplishments}/>
+                    </Section>
+                );
+            })}
 
         </SectionWrapper>
     );

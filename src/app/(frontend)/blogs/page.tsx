@@ -3,8 +3,7 @@ import SectionWrapper from '@/src/components/layout/SectionWrapper';
 import Section from '@/src/components/layout/Section';
 import Intro from './_components/Intro';
 import Preview from './_components/Preview';
-//import { blogs } from './_data/blogs';
-//
+
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import type { Media } from '@/src/payload-types';

@@ -5,47 +5,60 @@ import BulletList from '@/src/components/ui/BulletList';
 import Heading from '@/src/components/ui/Heading';
 
 interface WorkExperienceProps {
-    companyLogo: string;
-    companyName: string;
-    logoClasses: string;
+    company: string;
     jobTitle: string;
-    dateRange: string;
-    technologies: string[];
-    accomplishments: string[];
+    startDate: string;
+    endDate: string;
+    technologies?: string[];
+    accomplishments?: string[];
+    logo: string;
+    alt: string;
 }
 
+//className='absolute top-8 right-4 max-w-35 md:max-w-45 max-h-20 md:max-h-30 w-auto h-auto object-contain'
+//top-8 right-4
 const Job: React.FC<WorkExperienceProps> = ({
-    companyLogo,
-    companyName,
-    logoClasses,
+    company,
     jobTitle,
-    dateRange,
+    startDate,
+    endDate,
     technologies,
-    accomplishments
+    accomplishments,
+    logo,
+    alt,
 }) => {
     return (
         <>
-            <Image
-                src={companyLogo}
-                alt={`${companyName} Logo`}
-                width={56}
-                height={56}
-                className={`${logoClasses} absolute top-8 right-4 h-14 md:h-18.75 w-auto`}
-            />
-            <Heading className='' title={companyName} size='xl'/>
-            <Heading className='' title={jobTitle} size='lg'/>
-            <Heading className='' title={dateRange} size='bs'/>
+            <div className='flex flex-row'>
+                <div className='mr-4'>
+                    <Heading className='' title={company} size='xl'/>
+                    <Heading className='' title={jobTitle} size='lg'/>
+                    <Heading className='' title={`${startDate} - ${endDate}`} size='bs'/>
+                </div>
+                <div className='ml-auto'>
+                    <Image
+                        src={logo}
+                        alt={alt}
+                        width={300}
+                        height={300}
+                        className='w-auto h-auto max-w-20 max-h-20 object-fill'
+                        unoptimized
+                    />
+                </div>
+            </div>
 
             <div>
-            {technologies.map((tech, index) => (
+            {technologies && technologies.map((tech, index) => (
                 <Badge key={index} className="my-2 mr-2" text={tech}/>
             ))}
             </div>
 
+            {accomplishments &&
             <BulletList
                 items={accomplishments}
                 className=""
             />
+            }
 
         </>
     );

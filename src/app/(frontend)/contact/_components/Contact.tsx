@@ -5,15 +5,28 @@ import TwitterIcon from '@/src/components/icons/TwitterIcon';
 import Social from './Social';
 import Text from '@/src/components/ui/Text';
 
-const Contact: React.FC = () => {
+import { getPayload } from 'payload'
+import config from '@payload-config'
+
+async function Contact(): Promise<React.ReactNode> {
+
+    const payload = await getPayload({ config })
+    const socials = await payload.findGlobal({
+        slug: 'social-links',
+    })
+
+    const email = socials.email ? socials.email : 'example@mail.com';
+    const linkedin = socials.linkedin ? socials.linkedin : 'linkedin-username';
+    const twitter = socials.twitter ? socials.twitter : 'twitter-username';
+
     return (
         <>
             <Text className="text-center max-w-lg mb-4 mx-auto" text="I'm always open to discussing new opportunities, collaborations, or simply having a coffee chat." size='bs'/>
 
             <div className="flex flex-col items-center">
-                <Social icon={<EmailIcon />} social='Email' link='mailto:contact@lamkin.dev' tag='contact@lamkin.dev' className='my-4'/>
-                <Social icon={<LinkedinIcon />} social='LinkedIn'link='https://www.linkedin.com/in/chaselamkin/' tag='@chaselamkin' className='my-4'/>
-                <Social icon={<TwitterIcon />} social='Twitter' link='https://x.com/ENIACore' tag='@ENIACore' className='my-4'/>
+                <Social icon={<EmailIcon />} social='Email' link={`mailto:${email}`} tag={email} className='my-4'/>
+                <Social icon={<LinkedinIcon />} social='LinkedIn' link={`https://www.linkedin.com/in/${linkedin}`} tag={`@${linkedin}`} className='my-4'/>
+                <Social icon={<TwitterIcon />} social='Twitter' link={`https://x.com/${twitter}`} tag={`@${twitter}`} className='my-4'/>
             </div>
 
             <Text className="text-center max-w-md italic mt-4 mx-auto" text="I'm most active on email and typically respond within 24-48 hours. Looking forward to connecting!" size='bs'/>
